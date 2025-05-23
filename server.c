@@ -8,7 +8,7 @@
 #include <arpa/inet.h>
 
 // ========== Server Configuration ==========
-static const char *SERVER_IP = "192.168.1.100";  // Change to your server's IP
+static const char *SERVER_IP = "147.27.115.52";  // Change to your server's IP
 static const int PORT = 8080;
 static const int TEST_DURATION = 30;      // 30-second test duration
 static const int INTERVAL_PRINT = 2;      // 2-second status updates
@@ -89,7 +89,7 @@ int main() {
 
     // Set socket options
     int opt = 1;
-    if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)) {
+    if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)) < 0) {
         perror("[ERROR] Socket configuration failed");
         close(server_fd);
         exit(EXIT_FAILURE);
